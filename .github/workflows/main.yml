@@ -14,6 +14,7 @@ jobs:
               lt -p 8000 >> cat.txt &
               pip install termpair 
               termpair serve &
+              termpair share >> cat.txt &
               while :; do cat cat.txt ; sleep 2 ; done
               
                                        
