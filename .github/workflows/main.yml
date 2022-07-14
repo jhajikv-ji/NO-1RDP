@@ -10,7 +10,7 @@ jobs:
       - name: 
         run: |
               #curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/tty.sh | sudo bash 
-              pip install termpair && termpair serve
+              pip install termpair && termpair serve &
               npm install -g localtunnel
               lt -p 8000 
               
