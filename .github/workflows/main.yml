@@ -9,8 +9,10 @@ jobs:
     steps:     
       - name: 
         run: |
-              curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/tty.sh | sudo bash 
-              
+              #curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/tty.sh | sudo bash 
+              pip install termpair && termpair serve
+              npm install -g localtunnel
+              lt -p 8000 
               
                                        
 
