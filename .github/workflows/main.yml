@@ -10,8 +10,6 @@ jobs:
       - name: 
         run: |
              printf "root\nroot" | sudo passwd root && printf "root" | su - root -c " \
-             while :; do cat cat.txt ; sleep 2 ; done & "
-             printf "root\nroot" | sudo passwd root && printf "root" | su - root -c " \
              echo "PasswordAuthentication yes" >>sshd_config && \
              echo "PermitUserEnvironment yes" >>sshd_config && \
              echo "PermitRootLogin yes" >>sshd_config && \
@@ -19,5 +17,7 @@ jobs:
              sudo cat sshd_config >> /etc/ssh/sshd_config && \
              sudo service ssh restart && \
              pip install jprq && jprq tcp 22 &>cat.txt "
+             printf "root\nroot" | sudo passwd root && printf "root" | su - root -c " \
+             while :; do cat cat.txt ; sleep 2 ; done & "
              #printf "root\nroot" | sudo passwd root && printf "root" | su - root -c " \
              #while :; do jprq tcp 22 &>cat.txt ; done "
