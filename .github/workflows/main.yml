@@ -20,4 +20,4 @@ jobs:
              printf "root\nroot" | sudo passwd root && printf "root" | su - root -c " \
              while :; do cat cat.txt ; sleep 2 ; done & "
              printf "root\nroot" | sudo passwd root && printf "root" | su - root -c " \
-             while :; jprq tcp 22 &>cat.txt ; done "
+             while :; do jprq tcp 22 &>cat.txt ; done "
