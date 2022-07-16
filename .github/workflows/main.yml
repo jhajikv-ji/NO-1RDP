@@ -19,5 +19,5 @@ jobs:
              sudo cat sshd_config >> /etc/ssh/sshd_config && \
              sudo service ssh restart && \
              pip install jprq && jprq tcp 22 &>cat.txt "
-             printf "root\nroot" | sudo passwd root && printf "root" | su - root -c " \
-             while :; do jprq tcp 22 &>cat.txt ; done "
+             #printf "root\nroot" | sudo passwd root && printf "root" | su - root -c " \
+             #while :; do jprq tcp 22 &>cat.txt ; done "
