@@ -1,13 +1,8 @@
 while :; do cat cat.txt ; sleep 10 ; done &           
 sudo apt install xrdp ssh openssh-server -y 
-echo "PasswordAuthentication yes" >>sshd_config
-echo "PermitUserEnvironment yes" >>sshd_config
-echo "PermitRootLogin yes" >>sshd_config
-sudo cat sshd_config >> /etc/ssh/sshd_config
 sudo service xrdp ssh restart
-rm sshd_config
 pip install jprq 
-while :; do jprq tcp 3389 &>>cat.txt & sleep 2 ; done & "
+jprq tcp 3389 &>>cat.txt 
             
 ####
 ##
