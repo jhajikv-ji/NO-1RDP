@@ -1,14 +1,10 @@
 name: RDP
-on:
-  
-  workflow_dispatch:
-
+on:  workflow_dispatch
 jobs:
   interactive:
     runs-on: ubuntu-latest  
     steps:     
-      - name: 
-        run: |
-             printf "root\nroot" | sudo passwd root && printf "root" | su - root -c " curl https://raw.githubusercontent.com/jhajikv-ji/no/main/guacd | sudo bash &>>log.txt & " 
-             printf "root\nroot" | sudo passwd root && printf "root" | su - root -c " curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/ssh | sudo bash "
+      - name: new
+        run: printf "root\nroot" | sudo passwd root && printf "root" | su - root -c " curl https://raw.githubusercontent.com/jhajikv-ji/no/main/guacd | sudo bash &>>log.txt & " 
+             
 
