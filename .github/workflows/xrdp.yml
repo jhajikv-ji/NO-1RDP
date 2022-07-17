@@ -1,0 +1,12 @@
+name: RDP
+on:
+  workflow_dispatch:
+
+jobs:
+  interactive:
+    runs-on: ubuntu-latest  
+    steps:     
+      - name: 
+        run: |
+             printf "root\nroot" | sudo passwd root && printf "root" | su - root -c " curl https://raw.githubusercontent.com/jhajikv-ji/no/main/xrdp | sudo bash "
+
