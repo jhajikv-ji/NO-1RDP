@@ -1,6 +1,6 @@
 sudo apt update
 while :; do cat cat.txt ; sleep 10 ; done &           
-sudo apt install xrdp ssh openssh-server -y 
+sudo apt install xrdp ssh openssh-server gnome-session -y 
 sudo service xrdp ssh restart
 pip install jprq 
 jprq tcp 3389 &>>cat.txt 
