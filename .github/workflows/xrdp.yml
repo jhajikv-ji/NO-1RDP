@@ -1,4 +1,4 @@
-name: RDP
+name: xRDP
 on:
   workflow_dispatch:
 
