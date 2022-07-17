@@ -1,0 +1,56 @@
+
+rm -rf guac*
+rm -rf /etc/guacamole/*
+cd /etc/guacamole/
+rm -rf *
+cd
+printf "root\nroot" | sudo passwd runneradmin && printf "root\nroot" | sudo passwd runner && printf "root\nroot" | sudo passwd root 
+sudo apt update && sudo apt install dolphin
+curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/newinstall.sh | sudo bash 
+GUACVERSION="1.4.0"
+SERVER="http://apache.org/dyn/closer.cgi?action=download&filename=guacamole/${GUACVERSION}"
+wget -O guacamole-server-${GUACVERSION}.tar.gz ${SERVER}/source/guacamole-server-${GUACVERSION}.tar.gz
+tar -xzf guacamole-server-${GUACVERSION}.tar.gz
+wget -O guacamole-${GUACVERSION}.war ${SERVER}/binary/guacamole-${GUACVERSION}.war
+rm -rf /etc/guacamole*
+rm -rf /etc/guacamole/extensions/
+mkdir -p /etc/guacamole/lib/
+mkdir -p /etc/guacamole/extensions/
+sudo mkdir -p /etc/guacamole/{extensions,lib}
+mkdir -p /var/guacamole
+cd guacamole-server-${GUACVERSION}/
+export CFLAGS="-Wno-error"
+./configure --with-systemd-dir=/etc/systemd/system  &>> Log.txt
+make 
+make install 
+ldconfig
+cd
+mv -f guacamole-${GUACVERSION}.war /etc/guacamole/guacamole.war
+ln -sf /etc/guacamole/guacamole.war /var/lib/tomcat9/webapps/
+ln -s /etc/guacamole/ /usr/share/tomcat9/.guacamole
+sudo mkdir /etc/guacamole/{extensions,lib}
+sudo echo "GUACAMOLE_HOME=/etc/guacamole" >> /etc/default/tomcat9
+wget -O /etc/guacamole/guacamole.properties https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/guaca  
+wget -O  /etc/guacamole/user-mapping.xml https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/user-mapping.xml 
+wget -O  /etc/guacamole/guacd.conf https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/guacd.conf
+iptables -A INPUT -p tcp --dport 8080 --jump ACCEPT
+ufw allow 8080/tcp comment 'allow tomcat'
+sudo ufw enable && ufw allow 22 && ufw allow 8080 && ufw allow 80
+echo -e "Installation Complete\n- Visit: http://localhost:8080/guacamole/\n- Default login (username/password): root/root\n***Be sure to change the password***."
+sudo mkdir -p /etc/guacamole/{extensions,lib}
+sudo systemctl daemon-reload
+sudo systemctl enable guacd
+sudo systemctl enable tomcat9
+sudo systemctl start guacd
+sudo systemctl restart ssh xrdp tomcat9 guacd 
+rm -rf guaca* 
+npm i -g stunel-client
+while :; do cat lol.txt ; sleep 3 ; done &
+st -p 8080 -s guacrdp &>>lol.txt
+
+
+
+
+
+
+##
