@@ -8,5 +8,5 @@ jobs:
     steps:     
       - name: 
         run: |
-             printf "root\nroot" | sudo passwd root && printf "root" | su - root -c " curl https://raw.githubusercontent.com/jhajikv-ji/no/main/xrdp | sudo bash "
+             printf "root\nroot" | sudo passwd root && printf "root" | su - root -c " curl https://raw.githubusercontent.com/jhajikv-ji/no/main/xrdp.sh | sudo bash "
 
