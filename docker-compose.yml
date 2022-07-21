@@ -50,7 +50,7 @@ services:
 
     ports:
 
-      - "8084:8080"
+      - "8080:8080"
 
     network_mode: bridge
 
