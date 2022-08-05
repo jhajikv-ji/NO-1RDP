@@ -4,6 +4,14 @@ docker run  -d -p 3000:3000 wettyoss/wetty --ssh-host=172.17.0.1
 sleep 10
 wget -O cli https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64  
 chmod +x ./cli && ./cli --url http://localhost:3000/wetty &>> cat.txt &
+sudo service ssh restart
+printf "root\nroot" | sudo passwd root        
+echo "PasswordAuthentication yes" >>sshd_config
+echo "PermitUserEnvironment yes" >>sshd_config
+echo "PermitRootLogin yes" >>sshd_config
+sudo cat sshd_config >> /etc/ssh/sshd_config
+sudo service ssh restart
+rm sshd_config
 while :; do cat cat.txt | sed '5!d' | sed 's:[2022]*:[&:' |  sed 's:https*:](&:' |  sed 's:trycloudflare.com*:&/wetty):' ; sleep 3 ; done 
 
 
