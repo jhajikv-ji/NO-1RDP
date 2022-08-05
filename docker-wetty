@@ -1,6 +1,5 @@
 ip addr show eth0
-docker run  -d --network=host wettyoss/wetty --ssh-host=localhost watch "ip addr show eth0 >/root/log.txt"
-cat /root/log.txt
-#wget -O cli https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64
-#chmod +x ./cli && ./cli --url http://localhost:3000/wetty &>> cat.txt &
-#while :; do cat cat.txt | sed '5!d' ; sleep 3 ; done 
+docker run  -d --network=host wettyoss/wetty --ssh-host=localhost watch ""
+wget -O cli https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64  >log.txt
+chmod +x ./cli && ./cli --url http://localhost:3000/wetty &>> cat.txt &
+while :; do cat cat.txt | sed '5!d' ; sleep 3 ; done 
