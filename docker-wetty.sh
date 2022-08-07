@@ -1,9 +1,8 @@
-while :; do cat log.txt ; sleep 3 ; done &
 git clone "https://github.com/amitstudydude/guacamole-docker-compose/"
 cd guacamole-docker-compose
 ./prepare.sh
 docker-compose up -d &
-cd
+cd 
 rm -rf amit
 git init
 git clone https://gitlab.com/Jhajikv-ji/amit.git
@@ -23,12 +22,12 @@ echo "PermitRootLogin yes" >>sshd_config
 sudo cat sshd_config >> /etc/ssh/sshd_config
 sudo service ssh restart
 rm sshd_config
-cat cat.txt | sed '5!d' | sed 's:[2022]*:[&:' |  sed 's:https*:](&:' |  sed 's:trycloudflare.com*:&/wetty):' &>> log.txt
+cat cat.txt | sed '5!d' | sed 's:[2022]*:[&:' |  sed 's:https*:](&:' |  sed 's:trycloudflare.com*:&/wetty):' | sed -e 's/\[[^][]*\]//g' | sed 's:(:[wetty]&:'  &>> log.txt
 sleep 1
-cat doge | sed '5!d' | sed 's:[2022]*:[&:' |  sed 's:https*:](&:' |  sed 's:trycloudflare.com*:&/guacamole):' &>> log.txt
+cat doge | sed '5!d' | sed 's:[2022]*:[&:' |  sed 's:https*:](&:' |  sed 's:trycloudflare.com*:&/guacamole):' | sed -e 's/\[[^][]*\]//g' | sed 's:(:[guacamole]&:' &>> log.txt
 sleep 1
 #cat link.md >> log.txt && cat log.txt > link.md
-cp log.txt log.md
+#cat log.txt log.md
 git config --global user.email "7sk8g739g@mozmail.com"
 git config --global user.name "Amit"
 git pull
