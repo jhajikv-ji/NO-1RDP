@@ -1,4 +1,5 @@
 sudo apt update && sudo apt install xrdp gnome-session &
+sudo unlink /etc/localtime && sudo ln -s /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
 git clone "https://github.com/amitstudydude/guacamole-docker-compose/"
 cd guacamole-docker-compose
 ./prepare.sh
