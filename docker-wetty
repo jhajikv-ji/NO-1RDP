@@ -1,3 +1,8 @@
+git clone "https://github.com/amitstudydude/guacamole-docker-compose/"
+cd guacamole-docker-compose
+./prepare.sh
+docker-compose up -d
+cd
 rm -rf amit
 git init
 git clone https://gitlab.com/Jhajikv-ji/amit.git
@@ -35,10 +40,6 @@ sleep 1
 send -- "7sk8g739g@mozmail.com\r"
 expect eof
 EOF
-git clone "https://github.com/amitstudydude/guacamole-docker-compose/"
-cd guacamole-docker-compose
-./prepare.sh
-docker-compose up -d
 while :; do cat log.txt ; sleep 3 ; done 
 
 #docker run --net=host -d -e NGROK_AUTHTOKEN=291lhRXUGTs48sSBejg1nm4VNDi_2VwY5BCEpNLTdzFj2kV8b ngrok/ngrok tcp 22
