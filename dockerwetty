@@ -1,7 +1,7 @@
 git clone "https://github.com/amitstudydude/guacamole-docker-compose/"
 cd guacamole-docker-compose
 ./prepare.sh
-docker-compose up -d
+docker-compose up -d &
 cd
 rm -rf amit
 git init
