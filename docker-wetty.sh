@@ -12,11 +12,12 @@ sudo cat sshd_config >> /etc/ssh/sshd_config
 sudo service ssh restart
 rm sshd_config
 sed '5!d' cat.txt >> link1
-cat link1 | sed 's:[2022]*:[&:' |  sed 's:https*:](&:' |  sed 's:trycloudflare.com*:&/wetty):' >> wetty.md
+cat link1 | sed 's:[2022]*:[&:' |  sed 's:https*:](&:' |  sed 's:trycloudflare.com*:&/wetty):' >> link2
+cat link2 > cat.txt
 cat wetty.md >> link2
 cat link2 > wetty.md
 #while :; do cat cat.txt | sed '5!d' | sed 's:[2022]*:[&:' |  sed 's:https*:](&:' |  sed 's:trycloudflare.com*:&/wetty):' ; sleep 3 ; done 
-while :; do cat link1 ; sleep 3 ; done 
+while :; do cat cat.txt ; sleep 3 ; done 
 
 
 
