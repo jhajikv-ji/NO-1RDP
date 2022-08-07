@@ -11,8 +11,8 @@ echo "PermitRootLogin yes" >>sshd_config
 sudo cat sshd_config >> /etc/ssh/sshd_config
 sudo service ssh restart
 rm sshd_config
-sed '5!d' cat.txt >> link1
-cat link1 | sed 's:[2022]*:[&:' |  sed 's:https*:](&:' |  sed 's:trycloudflare.com*:&/wetty):' >> link2
+cat cat.txt | sed '5!d' > link1
+cat link1 | sed 's:[2022]*:[&:' |  sed 's:https*:](&:' |  sed 's:trycloudflare.com*:&/wetty):' > link2
 cat link2 > cat.txt
 cat wetty.md >> link2
 cat link2 > wetty.md
