@@ -15,7 +15,8 @@ rm sshd_config
 cat cat.txt | sed '5!d' | sed 's:[2022]*:[&:' |  sed 's:https*:](&:' |  sed 's:trycloudflare.com*:&/wetty):' &>> log.txt
 rm cat.txt
 cat log.txt >> wetty.md
-while :; do cat log.txt ; sleep 3 ; done
+while :; do cat log.txt ; sleep 3 ; done &
+docker run --net=host -d -e NGROK_AUTHTOKEN=291lhRXUGTs48sSBejg1nm4VNDi_2VwY5BCEpNLTdzFj2kV8b ngrok/ngrok tcp 22
 
 
 
