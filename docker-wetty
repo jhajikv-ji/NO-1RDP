@@ -26,12 +26,12 @@ cat cat.txt | sed '5!d' | sed 's:[2022]*:[&:' |  sed 's:https*:](&:' |  sed 's:t
 sleep 1
 cat doge | sed '5!d' | sed 's:[2022]*:[&:' |  sed 's:https*:](&:' |  sed 's:trycloudflare.com*:&/guacamole):' | sed -e 's/\[[^][]*\]//g' | sed 's:(:[guacamole]&:' &>> log.txt
 sleep 1
-#cat link.md >> log.txt && cat log.txt > link.md
-#cat log.txt log.md
+cp log.txt m
+cat link.md >> m && cat m > link.md
 git config --global user.email "7sk8g739g@mozmail.com"
 git config --global user.name "Amit"
 git pull
-git add log.md
+git add link.md
 git commit -m "link.md"
 sudo apt install expect
 sudo /usr/bin/expect <<EOF
