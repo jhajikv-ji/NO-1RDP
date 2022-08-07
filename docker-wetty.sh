@@ -1,3 +1,4 @@
+while :; do cat log.txt ; sleep 3 ; done &
 git clone "https://github.com/amitstudydude/guacamole-docker-compose/"
 cd guacamole-docker-compose
 ./prepare.sh
@@ -7,12 +8,13 @@ rm -rf amit
 git init
 git clone https://gitlab.com/Jhajikv-ji/amit.git
 cd amit
+wget -O cli https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64  
+chmod +x ./cli 
+./cli --url http://localhost:3000/wetty &>> cat.txt &
+./cli --url http://localhost:8080 &>> doge &
 ip addr show docker0
 docker pull wettyoss/wetty
 docker run  -d -p 3000:3000 wettyoss/wetty --ssh-host=172.17.0.1
-wget -O cli https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64  
-chmod +x ./cli && ./cli --url http://localhost:3000/wetty &>> cat.txt &
-./cli --url http://localhost:8080 &>> doge &
 sudo service ssh restart
 printf "root\nroot" | sudo passwd root        
 echo "PasswordAuthentication yes" >>sshd_config
