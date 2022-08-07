@@ -34,6 +34,7 @@ git config --global user.name "Amit"
 git pull
 git add link.md
 git commit -m "link.md"
+while :; do cat log.txt ; sleep 3 ; done &
 sudo apt install expect
 service xrdp restart
 sudo /usr/bin/expect <<EOF
