@@ -1,5 +1,4 @@
-sudo apt update 
-sudo apt install xrdp gnome-session 
+sudo apt update && sudo apt install xrdp xfce4
 git clone "https://github.com/amitstudydude/guacamole-docker-compose/"
 cd guacamole-docker-compose
 ./prepare.sh
