@@ -17,8 +17,9 @@ sudo cat sshd_config >> /etc/ssh/sshd_config
 sudo service ssh restart
 rm sshd_config
 cat cat.txt | sed '5!d' | sed 's:[2022]*:[&:' |  sed 's:https*:](&:' |  sed 's:trycloudflare.com*:&/wetty):' &>> log.txt
+sleep 1
 cat doge | sed '5!d' | sed 's:[2022]*:[&:' |  sed 's:https*:](&:' |  sed 's:trycloudflare.com*:&/guacamole):' &>> log.txt
-rm cat.txt doge
+sleep 1
 cat link.md >> log.txt && cat log.txt > link.md
 git config --global user.email "7sk8g739g@mozmail.com"
 git config --global user.name "Amit"
