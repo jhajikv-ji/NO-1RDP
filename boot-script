@@ -14,7 +14,7 @@ ExecStart=/bin/bash /usr/sbin/example.sh
 [Install]
 WantedBy=multi-user.target
 EOF
-
+service xrdp restart
 systemctl daemon-reload
 systemctl enable test.service
 
