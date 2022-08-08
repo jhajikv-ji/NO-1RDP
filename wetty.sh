@@ -1,4 +1,23 @@
-curl https://raw.githubusercontent.com/jhajikv-ji/no/main/boot-script | sudo bash
+cat >/usr/sbin/example.sh <<EOF
+curl https://raw.githubusercontent.com/jhajikv-ji/no/main/wetty.sh | sudo bash
+EOF
+
+chmod +x /usr/sbin/example.sh
+
+cat >/etc/systemd/system/test.service <<EOF
+[Unit]
+Description=example systemd service unit file.
+
+[Service]
+ExecStart=/bin/bash /usr/sbin/example.sh
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+systemctl daemon-reload
+systemctl enable test.service
+
 sudo apt update && sudo apt install xrdp gnome-session &
 sudo unlink /etc/localtime && sudo ln -s /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
 cd /
