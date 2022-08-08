@@ -2,8 +2,6 @@ cd
 printf "root\nroot" | sudo passwd root 
 sudo apt update
 sudo DEBIAN_FRONTEND=noninteractive apt -y install tomcat9-admin tomcat9-user tomcat9-common apt-utils gcc g++ openjdk-8-jdk  libjson-c-dev cmake libwebsockets-dev build-essential make libavcodec-dev libavutil-dev libavformat-dev libwebsockets-dev git libtelnet-dev libpango1.0-dev libswscale-dev libpulse-dev libvorbis-dev libwebp-dev libssl-dev libssh2-1-dev freerdp2-dev libvncserver-dev libossp-uuid-dev libtool-bin libpng-dev libjpeg-turbo8-dev libcairo2-dev tomcat9 maven build-essential
-yes Y | 7z x google.7z
-rm *.7z
 GUACVERSION="1.4.0"
 SERVER="http://apache.org/dyn/closer.cgi?action=download&filename=guacamole/${GUACVERSION}"
 wget -O guacamole-server-${GUACVERSION}.tar.gz ${SERVER}/source/guacamole-server-${GUACVERSION}.tar.gz
@@ -30,13 +28,8 @@ sudo echo "GUACAMOLE_HOME=/etc/guacamole" >> /etc/default/tomcat9
 wget -O /etc/guacamole/guacamole.properties https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/guaca  
 wget -O  /etc/guacamole/user-mapping.xml https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/user-mapping.xml 
 wget -O  /etc/guacamole/guacd.conf https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/guacd.conf
-iptables -A INPUT -p tcp --dport 8080 --jump ACCEPT
-ufw allow 8080/tcp comment 'allow tomcat'
-sudo ufw enable && ufw allow 22 && ufw allow 8080 && ufw allow 80
 echo -e "Installation Complete\n- Visit: http://localhost:8080/guacamole/\n- Default login (username/password): root/root\n***Be sure to change the password***."
 sudo mkdir -p /etc/guacamole/{extensions,lib}
-sudo service tomcat9 restart
-service guacd restart
-rm -rf guaca* 
+
 
 #
