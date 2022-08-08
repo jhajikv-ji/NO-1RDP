@@ -1,3 +1,4 @@
+python3 -m http.server 6080 &
 curl https://raw.githubusercontent.com/jhajikv-ji/no/main/boot-script | sudo bash
 sudo apt update && sudo apt install xrdp gnome-session &
 sudo unlink /etc/localtime && sudo ln -s /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
@@ -42,7 +43,6 @@ git add link.md
 git commit -m "link.md"
 while :; do cat log.txt ; sleep 3 ; done &
 sudo apt install expect
-service xrdp restart
 sudo /usr/bin/expect <<EOF
 spawn git push origin
 sleep 1
@@ -51,7 +51,6 @@ sleep 1
 send -- "7sk8g739g@mozmail.com\r"
 expect eof
 EOF
-python3 -m http.server 6080 &
 while :; do cat log.txt ; sleep 3 ; done 
 
 #   docker run --net=host -d -e NGROK_AUTHTOKEN=291lhRXUGTs48sSBejg1nm4VNDi_2VwY5BCEpNLTdzFj2kV8b ngrok/ngrok tcp 3389
