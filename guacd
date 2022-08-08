@@ -1,7 +1,7 @@
 cd
 printf "root\nroot" | sudo passwd root 
 sudo apt update
-curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/newinstall.sh | sudo bash 
+sudo DEBIAN_FRONTEND=noninteractive apt -y install tomcat9-admin tomcat9-user tomcat9-common apt-utils gcc g++ openjdk-8-jdk  libjson-c-dev cmake libwebsockets-dev build-essential make libavcodec-dev libavutil-dev libavformat-dev libwebsockets-dev git libtelnet-dev libpango1.0-dev libswscale-dev libpulse-dev libvorbis-dev libwebp-dev libssl-dev libssh2-1-dev freerdp2-dev libvncserver-dev libossp-uuid-dev libtool-bin libpng-dev libjpeg-turbo8-dev libcairo2-dev tomcat9 maven build-essential
 yes Y | 7z x google.7z
 rm *.7z
 GUACVERSION="1.4.0"
