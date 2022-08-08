@@ -32,4 +32,7 @@ echo -e "Installation Complete\n- Visit: http://localhost:8080/guacamole/\n- Def
 sudo mkdir -p /etc/guacamole/{extensions,lib}
 
 
+#  docker pull ghcr.io/jhajikv-ji/guacamole:latest
+#. docker run --net=host -d -p 5040:8080 ghcr.io/jhajikv-ji/guacamole:latest
+
 #
