@@ -1,0 +1,6 @@
+wget -O cli https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64 && \ 
+chmod +x ./cli && ./cli --url http://localhost:8080 &>> 8080 &
+docker run --net=host -d -p 8080:8080 ghcr.io/jhajikv-ji/guacamole:latest
+cat 8080 | sed '5!d' | sed 's:[2022]*:[&:' |  sed 's:https*:](&:' |  sed 's:trycloudflare.com*:&/guacamole):' | sed -e 's/\[[^][]*\]//g' | sed 's:(:[guacamole]&:' &>> log.txt
+sleep 1
+while :; do cat log.txt ; sleep 3 ; done
