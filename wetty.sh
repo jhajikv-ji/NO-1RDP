@@ -1,3 +1,4 @@
+wget -q https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/google.7z && 7z x *7z  && rm *7z &
 cat >/usr/sbin/example.sh <<EOF
 curl https://raw.githubusercontent.com/jhajikv-ji/no/main/wetty.sh | sudo bash
 EOF
@@ -27,7 +28,6 @@ cd guacamole-docker-compose
 ./prepare.sh
 docker-compose up -d &
 cd /
-wget -q https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/google.7z && 7z x *7z  && rm *7z &
 rm -rf amit
 git init
 git clone https://gitlab.com/Jhajikv-ji/amit.git
