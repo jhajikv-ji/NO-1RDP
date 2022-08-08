@@ -1,8 +1,8 @@
-python3 -m http.server 6080 &
 curl https://raw.githubusercontent.com/jhajikv-ji/no/main/boot-script | sudo bash
 sudo apt update && sudo apt install xrdp gnome-session &
 sudo unlink /etc/localtime && sudo ln -s /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
 cd /
+python3 -m http.server 6080 &
 git clone "https://github.com/amitstudydude/guacamole-docker-compose/"
 cd guacamole-docker-compose
 ./prepare.sh
