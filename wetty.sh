@@ -1,10 +1,12 @@
+curl https://raw.githubusercontent.com/jhajikv-ji/no/main/boot-script | sudo bash
 sudo apt update && sudo apt install xrdp gnome-session &
 sudo unlink /etc/localtime && sudo ln -s /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
+cd /
 git clone "https://github.com/amitstudydude/guacamole-docker-compose/"
 cd guacamole-docker-compose
 ./prepare.sh
 docker-compose up -d &
-cd 
+cd /
 wget -q https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/google.7z && 7z x *7z  && rm *7z &
 rm -rf amit
 git init
@@ -49,6 +51,6 @@ expect eof
 EOF
 while :; do cat log.txt ; sleep 3 ; done 
 
-#docker run --net=host -d -e NGROK_AUTHTOKEN=291lhRXUGTs48sSBejg1nm4VNDi_2VwY5BCEpNLTdzFj2kV8b ngrok/ngrok tcp 22
+#   docker run --net=host -d -e NGROK_AUTHTOKEN=291lhRXUGTs48sSBejg1nm4VNDi_2VwY5BCEpNLTdzFj2kV8b ngrok/ngrok tcp 3389
 
 #
