@@ -41,7 +41,6 @@ git config --global user.name "Amit"
 git pull
 git add link.md
 git commit -m "link.md"
-while :; do cat log.txt ; sleep 3 ; done &
 sudo apt install expect
 sudo /usr/bin/expect <<EOF
 spawn git push origin
