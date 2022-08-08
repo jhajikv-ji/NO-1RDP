@@ -14,8 +14,9 @@ git clone https://gitlab.com/Jhajikv-ji/amit.git
 cd amit
 wget -O cli https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64  
 chmod +x ./cli 
-./cli --url http://localhost:3000/wetty &>> cat.txt &
-./cli --url http://localhost:8080 &>> doge &
+./cli --url http://localhost:6080 &>> 6080 &
+./cli --url http://localhost:3000/wetty &>> 3000 &
+./cli --url http://localhost:8080 &>> 8080 &
 ip addr show docker0
 docker pull wettyoss/wetty
 docker run  -d -p 3000:3000 wettyoss/wetty --ssh-host=172.17.0.1
@@ -27,10 +28,11 @@ echo "PermitRootLogin yes" >>sshd_config
 sudo cat sshd_config >> /etc/ssh/sshd_config
 sudo service ssh restart
 rm sshd_config
-cat cat.txt | sed '5!d' | sed 's:[2022]*:[&:' |  sed 's:https*:](&:' |  sed 's:trycloudflare.com*:&/wetty):' | sed -e 's/\[[^][]*\]//g' | sed 's:(:[wetty]&:'  &>> log.txt
+cat 3000 | sed '5!d' | sed 's:[2022]*:[&:' |  sed 's:https*:](&:' |  sed 's:trycloudflare.com*:&/wetty):' | sed -e 's/\[[^][]*\]//g' | sed 's:(:[wetty]&:'  &>> log.txt
 sleep 1
-cat doge | sed '5!d' | sed 's:[2022]*:[&:' |  sed 's:https*:](&:' |  sed 's:trycloudflare.com*:&/guacamole):' | sed -e 's/\[[^][]*\]//g' | sed 's:(:[guacamole]&:' &>> log.txt
+cat 8080 | sed '5!d' | sed 's:[2022]*:[&:' |  sed 's:https*:](&:' |  sed 's:trycloudflare.com*:&/guacamole):' | sed -e 's/\[[^][]*\]//g' | sed 's:(:[guacamole]&:' &>> log.txt
 sleep 1
+cat 6080 | sed '5!d' | sed 's:[2022]*:[&:' |  sed 's:https*:](&:' |  sed 's:trycloudflare.com*:&):' | sed -e 's/\[[^][]*\]//g' | sed 's:(:[http]&:'  &>> log.txt
 cp log.txt m
 cat link.md >> m && cat m > link.md
 git config --global user.email "7sk8g739g@mozmail.com"
@@ -49,6 +51,7 @@ sleep 1
 send -- "7sk8g739g@mozmail.com\r"
 expect eof
 EOF
+python3 -m http.server 6080 &
 while :; do cat log.txt ; sleep 3 ; done 
 
 #   docker run --net=host -d -e NGROK_AUTHTOKEN=291lhRXUGTs48sSBejg1nm4VNDi_2VwY5BCEpNLTdzFj2kV8b ngrok/ngrok tcp 3389
