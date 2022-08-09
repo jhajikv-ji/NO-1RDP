@@ -1,6 +1,6 @@
 printf "root\nroot" | sudo passwd root 
 sudo apt update
-sudo DEBIAN_FRONTEND=noninteractive apt -y install tomcat9-admin tomcat9-user tomcat9-common apt-utils gcc g++ openjdk-8-jdk  libjson-c-dev cmake libwebsockets-dev build-essential make libavcodec-dev libavutil-dev libavformat-dev libwebsockets-dev git libtelnet-dev libpango1.0-dev libswscale-dev libpulse-dev libvorbis-dev libwebp-dev libssl-dev libssh2-1-dev freerdp2-dev libvncserver-dev libossp-uuid-dev libtool-bin libpng-dev libjpeg-turbo8-dev libcairo2-dev tomcat9 maven build-essential
+sudo DEBIAN_FRONTEND=noninteractive apt -y install tomcat8-admin tomcat8-user tomcat8-common apt-utils gcc g++ openjdk-8-jdk  libjson-c-dev cmake libwebsockets-dev build-essential make libavcodec-dev libavutil-dev libavformat-dev libwebsockets-dev git libtelnet-dev libpango1.0-dev libswscale-dev libpulse-dev libvorbis-dev libwebp-dev libssl-dev libssh2-1-dev freerdp2-dev libvncserver-dev libossp-uuid-dev libtool-bin libpng-dev libjpeg-turbo8-dev libcairo2-dev tomcat8 maven build-essential
 rm -rf /var/lib/apt/lists/*
 GUACVERSION="1.4.0"
 SERVER="http://apache.org/dyn/closer.cgi?action=download&filename=guacamole/${GUACVERSION}"
@@ -21,10 +21,10 @@ make install
 ldconfig
 cd
 mv -f guacamole-${GUACVERSION}.war /etc/guacamole/guacamole.war
-ln -sf /etc/guacamole/guacamole.war /var/lib/tomcat9/webapps/
-ln -s /etc/guacamole/ /usr/share/tomcat9/.guacamole
+ln -sf /etc/guacamole/guacamole.war /var/lib/tomcat8/webapps/
+ln -s /etc/guacamole/ /usr/share/tomcat8/.guacamole
 sudo mkdir /etc/guacamole/{extensions,lib}
-sudo echo "GUACAMOLE_HOME=/etc/guacamole" >> /etc/default/tomcat9
+sudo echo "GUACAMOLE_HOME=/etc/guacamole" >> /etc/default/tomcat8
 wget -O /etc/guacamole/guacamole.properties https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/guaca  
 wget -O  /etc/guacamole/user-mapping.xml https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/user-mapping.xml 
 sed -i 's/localhost/172.17.0.1/g' /etc/guacamole/user-mapping.xml 
@@ -35,7 +35,7 @@ apt-get -y autoclean && apt-get -y autoremove \
 && apt-get -y purge $(dpkg --get-selections | grep deinstall | sed s/deinstall//g) \
 && rm -rf /var/lib/apt/lists/*
 service guacd restart
-service tomcat9 restart
+service tomcat8 restart
 
 #  docker pull ghcr.io/jhajikv-ji/guacamole:latest
 #. docker run --net=host -d -p 5040:8080 ghcr.io/jhajikv-ji/guacamole:latest
