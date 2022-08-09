@@ -38,7 +38,7 @@ mkdir -p /usr/share/tomcat9/logs
 bash /usr/share/tomcat9/bin/*sh
 sudo /usr/share/tomcat9/bin/startup.sh
 service guacd restart
-service tomcat9 start &
+service tomcat9 restart &
 
 #  docker pull ghcr.io/jhajikv-ji/guacamole:latest
 #. docker run --net=host -d -p 5040:8080 ghcr.io/jhajikv-ji/guacamole:latest
