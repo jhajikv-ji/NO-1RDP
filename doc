@@ -15,15 +15,17 @@ wget -O cli https://github.com/cloudflare/cloudflared/releases/latest/download/c
 ./cli --url http://localhost:3000 &>> 3000 &
 
 ######################
+ip addr show docker0
+docker pull wettyoss/wetty
+docker run  -d -p 3000:3000 wettyoss/wetty --ssh-host=172.17.0.1
+
+
 git clone "https://github.com/amitstudydude/guacamole-docker-compose/"
 cd guacamole-docker-compose
 ./prepare.sh
 docker-compose up -d &
 cd ..
 
-ip addr show docker0
-docker pull wettyoss/wetty
-docker run  -d -p 3000:3000 wettyoss/wetty --ssh-host=172.17.0.1
 
 ########################
 cat 3000 | sed '5!d' | sed 's:[2022]*:[&:' |  sed 's:https*:](&:' |  sed 's:trycloudflare.com*:&/wetty):' | sed -e 's/\[[^][]*\]//g' | sed 's:(:[wetty]&:'  &>> log.txt
