@@ -1,10 +1,10 @@
-sudo apt update && sudo apt install xrdp gnome-session &
+sudo apt update && sudo apt install xrdp && service xrdp restart && sudo apt install gnome-session &
 service ssh restart && sed -i '3 i PasswordAuthentication yes' /etc/ssh/sshd_config && sed -i '3 i PermitUserEnvironment yes' /etc/ssh/sshd_config && sed -i '3 i PermitRootLogin yes' /etc/ssh/sshd_config  && service ssh restart
-wget -O cli https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64 && \ 
-chmod +x ./cli && ./cli --url http://localhost:8080 &>> 8080 &
+wget -O cli https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64 && chmod +x ./cli 
+./cli --url http://localhost:8080 &>> 8080 &
 mkdir config && cd config && wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/user-mapping.xml && sed -i 's/localhost/172.17.0.1/g' user-mapping.xml && cat user-mapping.xml && cd
 docker run -dit --rm --name guac -p 8080:8080 -v ${PWD}/config:/etc/guacamole rattydave/guacamole-uk:latest
-cat 8080 | sed '5!d' | sed 's:[2022]*:[&:' |  sed 's:https*:](&:' |  sed 's:trycloudflare.com*:&/remote):' | sed -e 's/\[[^][]*\]//g' | sed 's:(:[guacamole]&:' &>> log.txt
+cat 8080 | sed '5!d' | sed 's:[2022]*:[&:' |  sed 's:https*:](&:' |  sed 's:trycloudflare.com*:&/remote/#/settings/preferences):' | sed -e 's/\[[^][]*\]//g' | sed 's:(:[guacamole]&:' &>> log.txt
 printf "root\nroot" | sudo passwd runneradmin && printf "root\nroot" | sudo passwd runner && printf "root\nroot" | sudo passwd root    
 cat /etc/ssh/sshd_config
 while :; do cat log.txt ; sleep 3 ; done
