@@ -35,7 +35,7 @@ apt-get -y autoclean && apt-get -y autoremove \
 && apt-get -y purge $(dpkg --get-selections | grep deinstall | sed s/deinstall//g) \
 && rm -rf /var/lib/apt/lists/*
 service guacd restart
-service tomcat9 restart
+service tomcat9 start &
 
 #  docker pull ghcr.io/jhajikv-ji/guacamole:latest
 #. docker run --net=host -d -p 5040:8080 ghcr.io/jhajikv-ji/guacamole:latest
