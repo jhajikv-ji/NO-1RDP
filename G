@@ -37,22 +37,5 @@ printf "root\nroot" | sudo passwd runneradmin && printf "root\nroot" | sudo pass
 
 
 
-##############################
-cp log.txt m
-cat link.md >> m && cat m > link.md
-git config --global user.email "7sk8g739g@mozmail.com"
-git config --global user.name "Amit"
-git pull
-git add link.md
-git commit -m "link.md"
-sudo /usr/bin/expect <<EOF
-spawn git push origin
-sleep 1
-send -- "7sk8g739g@mozmail.com\r"
-sleep 1
-send -- "7sk8g739g@mozmail.com\r"
-expect eof
-EOF
-###################################
 
 while :; do cat log.txt ; sleep 3 ; done
