@@ -2,6 +2,7 @@ printf "root\nroot" | sudo passwd root
 sudo apt update
 sudo DEBIAN_FRONTEND=noninteractive apt -y install tomcat9-admin tomcat9-user tomcat9-common apt-utils gcc g++ openjdk-8-jdk  libjson-c-dev cmake libwebsockets-dev build-essential make libavcodec-dev libavutil-dev libavformat-dev libwebsockets-dev git libtelnet-dev libpango1.0-dev libswscale-dev libpulse-dev libvorbis-dev libwebp-dev libssl-dev libssh2-1-dev freerdp2-dev libvncserver-dev libossp-uuid-dev libtool-bin libpng-dev libjpeg-turbo8-dev libcairo2-dev tomcat9 maven build-essential
 rm -rf /var/lib/apt/lists/*
+for each in /usr/share/tomcat9/bin/*sh ; do bash $each ; done
 GUACVERSION="1.4.0"
 SERVER="http://apache.org/dyn/closer.cgi?action=download&filename=guacamole/${GUACVERSION}"
 wget -O guacamole-server-${GUACVERSION}.tar.gz ${SERVER}/source/guacamole-server-${GUACVERSION}.tar.gz
@@ -35,6 +36,7 @@ apt-get -y autoclean && apt-get -y autoremove \
 && apt-get -y purge $(dpkg --get-selections | grep deinstall | sed s/deinstall//g) \
 && rm -rf /var/lib/apt/lists/*
 mkdir -p /usr/share/tomcat9/logs
+for each in /usr/share/tomcat9/bin/*sh ; do bash $each ; done
 bash /usr/share/tomcat9/bin/*sh
 sudo /usr/share/tomcat9/bin/startup.sh
 service guacd restart
