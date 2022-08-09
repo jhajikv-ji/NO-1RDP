@@ -8,4 +8,6 @@ WORKDIR /
 
 RUN apt update && yes | DEBIAN_FRONTEND=noninteractive apt install curl wget sudo tzdata keyboard-configuration && curl https://raw.githubusercontent.com/jhajikv-ji/no/main/guacd | sudo bash
 
+RUN sudo service tomcat9 restart 
+
 CMD ["bash"]
