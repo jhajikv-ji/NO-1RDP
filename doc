@@ -1,4 +1,4 @@
-sudo apt -qq update && sudo apt -qq install expect xrdp && service xrdp restart && sudo apt -qq install gnome-session &
+sudo apt -qq update && sudo apt -qq install expect xrdp && service xrdp restart && sudo apt -qq install gnome-session &>>mn &
 sudo unlink /etc/localtime && sudo ln -s /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
 cd /
 python3 -m http.server 6080 &
@@ -23,7 +23,7 @@ docker run  -d -p 3000:3000 wettyoss/wetty --ssh-host=172.17.0.1
 git clone "https://github.com/amitstudydude/guacamole-docker-compose/"
 cd guacamole-docker-compose
 ./prepare.sh
-docker-compose up -d &
+docker-compose up -d 
 cd ..
 
 
