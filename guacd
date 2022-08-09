@@ -15,7 +15,7 @@ sudo mkdir -p /etc/guacamole/{extensions,lib}
 mkdir -p /var/guacamole
 cd guacamole-server-${GUACVERSION}/
 export CFLAGS="-Wno-error"
-./configure --with-systemd-dir=/etc/systemd/system  &>> Log.txt
+./configure  --with-init-dir=/etc/init.d
 make 
 make install 
 ldconfig
@@ -30,7 +30,8 @@ wget -O  /etc/guacamole/user-mapping.xml https://raw.githubusercontent.com/amits
 wget -O  /etc/guacamole/guacd.conf https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/guacd.conf
 echo -e "Installation Complete\n- Visit: http://localhost:8080/guacamole/\n- Default login (username/password): root/root\n***Be sure to change the password***."
 sudo mkdir -p /etc/guacamole/{extensions,lib}
-
+service guacd restart
+service tomcat9 restart
 
 #  docker pull ghcr.io/jhajikv-ji/guacamole:latest
 #. docker run --net=host -d -p 5040:8080 ghcr.io/jhajikv-ji/guacamole:latest
