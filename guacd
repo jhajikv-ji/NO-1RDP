@@ -27,6 +27,7 @@ sudo mkdir /etc/guacamole/{extensions,lib}
 sudo echo "GUACAMOLE_HOME=/etc/guacamole" >> /etc/default/tomcat9
 wget -O /etc/guacamole/guacamole.properties https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/guaca  
 wget -O  /etc/guacamole/user-mapping.xml https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/user-mapping.xml 
+sed -i 's/localhost/172.17.0.1/g' /etc/guacamole/user-mapping.xml 
 wget -O  /etc/guacamole/guacd.conf https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/guacd.conf
 echo -e "Installation Complete\n- Visit: http://localhost:8080/guacamole/\n- Default login (username/password): root/root\n***Be sure to change the password***."
 sudo mkdir -p /etc/guacamole/{extensions,lib}
