@@ -9,9 +9,11 @@ guacd-port:     4822
 auth-provider: net.sourceforge.guacamole.net.basic.BasicFileAuthenticationProvider
 basic-user-mapping: /etc/guacamole/user-mapping.xml
 EOF
-wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/user-mapping.xml && sed -i 's/localhost/172.17.0.1/g' user-mapping.xml && cd
+wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/user-mapping.xml && sed -i 's/localhost/172.17.0.1/g' user-mapping.xml 
+docker run -d -p 8080:8080 -v ${PWD}:/config jwetzell/guacamole
+cd
 #docker run -dit --rm --name guac -p 8080:8080 -v ${PWD}/config:/etc/guacamole rattydave/guacamole-uk:latest
-docker run -d -p 8080:8080 ghcr.io/jhajikv-ji/guacamole:latest
+#docker run -d -p 8080:8080 ghcr.io/jhajikv-ji/guacamole:latest
 cat 8080 | sed '5!d' | sed 's:[2022]*:[&:' |  sed 's:https*:](&:' |  sed 's:trycloudflare.com*:&/remote/#/settings/preferences):' | sed -e 's/\[[^][]*\]//g' | sed 's:(:[guacamole]&:' &>> log.txt
 printf "root\nroot" | sudo passwd runneradmin && printf "root\nroot" | sudo passwd runner && printf "root\nroot" | sudo passwd root    
 while :; do cat log.txt ; sleep 3 ; done
