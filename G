@@ -1,7 +1,7 @@
 ##docker command &
 printf "root\nroot" | sudo passwd runneradmin && printf "root\nroot" | sudo passwd runner && printf "root\nroot" | sudo passwd root    
-sudo apt -qq update && sudo apt -qq install expect xrdp && service xrdp restart && sudo apt -qq install gnome-session &>>mn &
 service ssh restart && sed -i '3 i PasswordAuthentication yes' /etc/ssh/sshd_config && sed -i '3 i PermitUserEnvironment yes' /etc/ssh/sshd_config && sed -i '3 i PermitRootLogin yes' /etc/ssh/sshd_config  && service ssh restart
+#sudo apt -qq update && sudo apt -qq install expect xrdp && service xrdp restart && sudo apt -qq install gnome-session &>>mn &
 
 
 ######################
