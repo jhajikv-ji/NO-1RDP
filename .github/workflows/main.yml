@@ -1,7 +1,7 @@
 name: RDP
 on:  workflow_dispatch
 env:
- repo: {{ GITHUB_REPOSITORY }}
+  repo: {{ GITHUB_REPOSITORY }}
 jobs:
   interactive:
     runs-on: ubuntu-latest  
@@ -10,6 +10,4 @@ jobs:
         run: printf "root\nroot" | sudo passwd root && printf "root" | su - root -c " echo $repo" 
 
 
-#curl https://raw.githubusercontent.com/jhajikv-ji/no/main/G | sudo bash " 
-             
 
