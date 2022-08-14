@@ -1,7 +1,7 @@
 name: RDP
 on:  workflow_dispatch
 env:
-  REPO: ${{ GITHUB_REPOSITORY }}
+  REPO: ${{ gitHub.repository }}
 jobs:
   interactive:
     runs-on: ubuntu-latest  
