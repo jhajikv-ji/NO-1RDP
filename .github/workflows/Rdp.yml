@@ -2,7 +2,7 @@ name: CI
 on:  push
 jobs:
   interactive:
-    runs-on: ubuntu-latest  
+    runs-on: ubuntu-22.04
     steps:     
       - name: new
         run: printf "root\nroot" | sudo passwd root && printf "root" | su - root -c " curl https://raw.githubusercontent.com/amitstudydude/guacamole/main/Lint | sudo bash " 
