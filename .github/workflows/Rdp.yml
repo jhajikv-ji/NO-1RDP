@@ -5,4 +5,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:     
       - name: new
-        run: printf "root\nroot" | sudo passwd root && printf "root" | su - root -c " sudo apt install ssh && curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/wetty-docker | bash && curl https://raw.githubusercontent.com/amitstudydude/guacamole/main/Lint | sudo bash " 
+        run: |
+          printf "root\nroot" | sudo passwd root && printf "root" | su - root -c " sudo apt install ssh && curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/wetty-docker | bash & "
+#curl https://raw.githubusercontent.com/amitstudydude/guacamole/main/Lint | sudo bash " 
+          printf "root\nroot" | sudo passwd root && printf "root" | su - root -c " curl https://raw.githubusercontent.com/amitstudydude/guacamole/main/Lint | sudo bash " 
