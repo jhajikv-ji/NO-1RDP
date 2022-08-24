@@ -2,6 +2,7 @@
 * Hi , I am amistudydude.
 * This is my second profile.
 * Follow these instructions to avoid confusion.
+# **I am using Apache-Guacamole here . If you know about it , you are a pro**
 ## How to get an RDP
 **Disclaimer: Proceed on your own . I ensure that this RDP will run for full 6hrs & your account will not get banned , but I can't take any responsibility**
 * Fork https://github.com/jhajikv-ji/no
@@ -20,8 +21,8 @@
 * Do the following settings => Select text-input && Drag mouse [right]
 * ![alt text](https://github.com/jhajikv-ji/no/blob/main/image.jpg?raw=true)
 * Use Hackers' keyboard [play store]
-* Return to workflow
-* Click 1st link 
+* Now pro user can click on upper-right button and click on default .
+* But for new users - Click 1st link [ obviously from workflow output ]
 * Ctrl-Shift-Alt-Enter [ or swipe left ] - for clipboard 
 * Enjoy
 
