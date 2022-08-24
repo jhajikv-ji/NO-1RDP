@@ -1,4 +1,4 @@
-# no
+# Introduction
 * Hi , I am amistudydude.
 * This is my second profile.
 * Follow these instructions to avoid confusion.
@@ -11,12 +11,13 @@
 * You can see 2 links
 
 ## For Desktop users 
-* Read login:passed details given below the link
+* Read login:passwd details given below the link
 * Click 1st link
 * Ctrl-Shift-Alt-Enter for clipboard
 * Enjoy
 
 ## For Mobile users 
+* Read login:passwd details given below the link
 * Click 2nd link [it's the same link , but just a faster way to access rdp-client settings ]
 * Do the following settings => Select text-input && Drag mouse [right]
 * ![alt text](https://github.com/jhajikv-ji/no/blob/main/image.jpg?raw=true)
