@@ -1,0 +1,15 @@
+printf "root\nroot" | passwd root &&  printf "root\nroot" | passwd runner && printf "root\nroot" | passwd runneradmin 
+rm -rf /home/runner/*
+cd /
+python3 -m http.server 6080 &
+wget -O cli https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64 && chmod +x ./cli 
+./cli --url http://localhost:8080 &>> 8080 &
+./cli --url http://localhost:6080 &>> 6080 &
+apt update  >>/dev/null
+apt install xrdp gnome-session >>/dev/null &
+docker run --name guacd -d  -p 4822:4822 guacamole/guacd
+docker run --name guacamole -dit -p 8080:8080 ghcr.io/amitstudydude/guacamole
+service ssh restart && sed -i '3 i PasswordAuthentication yes' /etc/ssh/sshd_config && sed -i '3 i PermitUserEnvironment yes' /etc/ssh/sshd_config && sed -i '3 i PermitRootLogin yes' /etc/ssh/sshd_config && service ssh restart
+cat 8080 | sed '5!d' | sed 's:[2022]*:[&:' |  sed 's:https*:](&:' |  sed 's:trycloudflare.com*:&/#/):' | sed -e 's/\[[^][]*\]//g' | sed 's:(:[guacamole]&:' &>> log.txt
+cat 6080 | sed '5!d' | sed 's:[2022]*:[&:' |  sed 's:https*:](&:' |  sed 's:trycloudflare.com*:&):' | sed -e 's/\[[^][]*\]//g' | sed 's:(:[http]&:'  &>> log.txt
+while :; do cat log.txt ; sleep 3 ; done
