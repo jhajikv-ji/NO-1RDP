@@ -5,6 +5,7 @@
 * Run The Workflow
 * Wait 2 min
 * Click the link [ workflow output ]
+* Read login:passwd details given below the link
 
 ## For Mobile users 
 * Do the following settings => Select text-input && Drag mouse [right]
@@ -16,7 +17,6 @@
 
 ## For Desktop users
 * Delete settings/preferences from the link
-* Read login:passwd details given below the link
 * Ctrl-Shift-Alt-Enter for clipboard
 * Enjoy
 
