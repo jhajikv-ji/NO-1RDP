@@ -4,7 +4,6 @@
 * Follow these instructions to avoid confusion.
 # **I am using Apache-Guacamole here . If you know about it , you are a pro**
 ## How to get an RDP
-**Disclaimer: Proceed on your own . I ensure that this RDP will run for full 6hrs & your account will not get banned , but I can't take any responsibility**
 * Fork https://github.com/jhajikv-ji/no
 * Run The Workflow
 * Wait 2 min
