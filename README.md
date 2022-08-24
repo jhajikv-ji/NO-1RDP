@@ -4,7 +4,7 @@
 * Follow these instructions to avoid confusion.
 ## How to get an RDP
 **Disclaimer: Proceed on your own . I ensure that this RDP will run for full 6hrs & your account will not get banned , but I can't take any responsibility**
-* Fork this [repo](https://github.com/jhajikv-ji/no) 
+* Fork https://github.com/jhajikv-ji/no
 * Run The Workflow
 * Wait 2 min
 * You can see 2 links
@@ -14,8 +14,6 @@
 * Click 1st link
 * Ctrl-Shift-Alt-Enter for clipboard
 * Enjoy
-
-**If Something fails , create an issue , I will try to solve it**
 
 ## For Mobile users 
 * Click 2nd link [it's the same link , but just a faster way to access rdp-client settings ]
