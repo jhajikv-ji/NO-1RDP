@@ -11,6 +11,7 @@ service ssh restart && sed -i '3 i PasswordAuthentication yes' /etc/ssh/sshd_con
 cat 8080 | sed '5!d' | sed 's:[2022]*:[&:' |  sed 's:https*:](&:' |  sed 's:trycloudflare.com*:&/#/):' | sed -e 's/\[[^][]*\]//g' | sed 's:(:[guacamole]&:' &>> log.txt
 echo "for ssh - default login:passwd is ssh" &>> log.txt
 echo "for rdp - default login:passwd is rdp" &>> log.txt
+echo "all other user passwd inside rdp is by default root" &>> log.txt
 echo "wait 2m 20s to complete rdp installation" &>> log.txt
 while :; do cat log.txt ; sleep 3 ; done
 EOF
