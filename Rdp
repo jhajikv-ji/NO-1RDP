@@ -11,7 +11,7 @@ service ssh restart && sed -i '3 i PasswordAuthentication yes' /etc/ssh/sshd_con
 cat 8080 | sed '5!d' | sed 's:[2022]*:[&:' |  sed 's:https*:](&:' |  sed 's:trycloudflare.com*:&/#/settings/preferences):' | sed -e 's/\[[^][]*\]//g' | sed 's:(:[Click-here]&:' &>> log.txt
 echo "for ssh - default login:passwd is ssh" &>> log.txt
 echo "for rdp - default login:passwd is rdp" &>> log.txt
-apt install xrdp gnome-session >>/dev/null &
+apt install xrdp gnome-session &
 while :; do cat log.txt ; sleep 3 ; done
 EOF
 
