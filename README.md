@@ -3,7 +3,7 @@
 * Read instructions
 
 # **Another Way**
-* Fork this repo : https://github.com/jhajikv-ji/no
+* Fork this repo : https://github.com/jhajikv-ji/NO-1RDP
 * Run The Workflow
 * Wait 2 min
 * Read login:passwd details [ workflow output ]
