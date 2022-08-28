@@ -1,23 +1,17 @@
+# **Easy Way** 
+* Go to https://gitlab.com/amit-study/amit
+* Read instructions
 
-# How to get an RDP
-## **I am using Apache-Guacamole here . If you know about it , you are a pro**
-* Fork this repo
+# **Another Way**
+* Fork this repo : https://github.com/jhajikv-ji/no
 * Run The Workflow
 * Wait 2 min
-* Click the link [ workflow output ]
-* Read login:passwd details given below the link
-
-## For Mobile users 
-* Do the following settings => Select text-input && Drag mouse [right]
-* ![alt text](https://github.com/jhajikv-ji/no/blob/main/image.jpg?raw=true)
+* Read login:passwd details [ workflow output ]
+* Click the link [ workflow output ] . You will be redirected to settings . Do the settings you need , then delete **settings/preferences** from the link to access RDP/SSH
 * Use Hackers' keyboard [play store]
-* Delete settings/preferences from the link
-* Ctrl-Shift-Alt-Enter [ or swipe left ] - for clipboard 
-* Enjoy
+* Ctrl-Shift-Alt-Enter [ or swipe left ] - for clipboard-menu
 
-## For Desktop users
-* Delete settings/preferences from the link
-* Ctrl-Shift-Alt-Enter for clipboard
-* Enjoy
 
-**If Something fails , create an issue , I will try to solve it**
+* **Touchscreen-Optimized-Settings** => Select text-input && Drag mouse [right]
+![alt text](https://github.com/jhajikv-ji/no/blob/main/image.jpg?raw=true)
+
