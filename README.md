@@ -13,5 +13,7 @@
 
 
 * **Touchscreen-Optimized-Settings** => Select text-input && Drag mouse [right]
+
+[<img src="https://github.com/jhajikv-ji/no/blob/main/image.jpg?raw=true" width=23%>](https://github.com/jhajikv-ji/no/blob/main/image.jpg?raw=true)
 ![alt text](https://github.com/jhajikv-ji/no/blob/main/image.jpg?raw=true)
 
