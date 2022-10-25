@@ -1,5 +1,7 @@
 name: RDP
-on:  push
+on:  
+  push:
+  workflow_dispatch:
 jobs:
   interactive:
     runs-on: ubuntu-22.04
