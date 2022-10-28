@@ -1,11 +1,11 @@
 sudo rm -rf .mozilla
 firefox --private-window &
-sleep 5
+sleep 10
 sudo kill -9 $( ps -ef | grep firefox | awk '{print $2}' )
 sudo rm -rf .mozilla
 sudo cd /root
 #wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/google.7z
-sudo wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/telegram.7z
+#sudo wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/telegram.7z
 #7z x /root/google.7z
 sudo cd /home/runner
 sudo 7z x /root/telegram.7z
