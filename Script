@@ -1,0 +1,9 @@
+rm -rf .mozilla
+firefox --private-window &
+sleep 5
+kill -9 $( ps -ef | grep firefox | awk '{print $2}' )
+rm -rf .mozilla
+cd /root
+7z x /root/google.7z
+cd /home/runner
+7z x /root/telegram.7z
